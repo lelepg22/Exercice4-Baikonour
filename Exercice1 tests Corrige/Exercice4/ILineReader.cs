@@ -8,6 +8,6 @@ namespace Exercice4
 {
 	public interface ILineReader
 	{
-		public string GetLine();
+		string GetLine();
 	}
 }

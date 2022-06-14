@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercice4
 {
-	public interface ILineReader
+	public interface ICompanyNote
 	{
-		public string GetLine();
 	}
 }

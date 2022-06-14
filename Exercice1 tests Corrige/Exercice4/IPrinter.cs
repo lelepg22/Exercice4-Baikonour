@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Exercice4
 {
-	public interface ILineReader
+	public interface IPrinter
 	{
-		public string GetLine();
+		void PrintLine(string str);
+	}
+	public interface IPrintable
+	{
+		void Print(IPrinter printer);
 	}
 }

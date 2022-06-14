@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exercice4
 {
-	public interface ILineReader
+	public interface ICompanyNoteRecordAdder
 	{
-		public string GetLine();
+		void AddNoteRecord(ICompanyNote note, IDictionary<string, ICompanyNote> dico);
 	}
 }

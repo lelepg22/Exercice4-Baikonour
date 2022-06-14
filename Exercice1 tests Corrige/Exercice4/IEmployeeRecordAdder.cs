@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exercice4
 {
-	public interface ILineReader
+	public interface IEmployeeRecordAdder
 	{
-		public string GetLine();
+		void AddEmployeeRecord(IEmployee employee, IDictionary<string, IEmployee> dico);
 	}
 }

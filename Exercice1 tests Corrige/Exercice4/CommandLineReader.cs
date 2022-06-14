@@ -8,16 +8,9 @@ namespace Exercice4
 {
 	public class CommandLineReader : ILineReader
 	{
-		public string line;
-		public string[] readLine;
 		string ILineReader.GetLine()
 		{
-			return line;
+			throw new NotImplementedException();
 		}
-		
-		public CommandLineReader(string[] readLine)
-        {
-
-        }
 	}
 }
