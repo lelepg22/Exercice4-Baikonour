@@ -13,7 +13,16 @@ namespace Exercice4
 		public string employeePrint;
 		public Employee(string eid, string name)
 		{
-			employeeId = eid;
+
+			if (eid.All(Char.IsLetter))
+			{
+				employeeId = eid; ;
+			}
+			if (!eid.All(Char.IsLetter) || (eid.Length != 3))
+			{
+				throw new BadIDException();
+			}
+			
 			employeeName = name;
 			employeePrint = "[" + employeeId + "] " + employeeName;
 

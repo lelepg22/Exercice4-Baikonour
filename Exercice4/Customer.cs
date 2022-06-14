@@ -11,9 +11,18 @@ namespace Exercice4
 		public string clientId;
 		public string clientName;
 		public string clientPrint;
+		public int val;
 		public Customer(string cid, string name)
 		{
-			clientId = cid;
+			if (cid.All(Char.IsDigit))
+			{
+				 clientId = cid; ;
+			}
+			if (!cid.All(Char.IsDigit))
+			{
+				throw new BadIDException();
+			}
+			
 			clientName = name;
 			clientPrint = "[" +clientId +"] " + clientName;
 		}
@@ -30,8 +39,10 @@ namespace Exercice4
 
 		string ICustomer.GetCID()
 		{
-
+			if (clientId.All(Char.IsDigit)) { 
 			return clientId;
+			}
+			throw new NotImplementedException();
 		}
 
 		string IPerson.GetName()
