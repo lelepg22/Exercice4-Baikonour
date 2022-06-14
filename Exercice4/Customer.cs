@@ -8,9 +8,14 @@ namespace Exercice4
 {
 	public class Customer : ICustomer
 	{
+		public string clientId;
+		public string clientName;
+		public string clientPrint;
 		public Customer(string cid, string name)
 		{
-			throw new NotImplementedException();
+			clientId = cid;
+			clientName = name;
+			clientPrint = "[" +clientId +"] " + clientName;
 		}
 
 		int IComparable<ICustomer>.CompareTo(ICustomer other)
@@ -25,17 +30,18 @@ namespace Exercice4
 
 		string ICustomer.GetCID()
 		{
-			throw new NotImplementedException();
+
+			return clientId;
 		}
 
 		string IPerson.GetName()
 		{
-			throw new NotImplementedException();
+			return clientName;
 		}
 
 		void IPrintable.Print(IPrinter printer)
 		{
-			throw new NotImplementedException();
+			printer.PrintLine(clientPrint);
 		}
 	}
 }

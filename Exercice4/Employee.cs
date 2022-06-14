@@ -8,9 +8,15 @@ namespace Exercice4
 {
 	public class Employee : IEmployee
 	{
+		public string employeeId;
+		public string employeeName;
+		public string employeePrint;
 		public Employee(string eid, string name)
 		{
-			throw new NotImplementedException();
+			employeeId = eid;
+			employeeName = name;
+			employeePrint = "[" + employeeId + "] " + employeeName;
+
 		}
 
 		int IComparable<IEmployee>.CompareTo(IEmployee other)
@@ -25,17 +31,17 @@ namespace Exercice4
 
 		string IEmployee.GetEID()
 		{
-			throw new NotImplementedException();
+			return employeeId;
 		}
 
 		string IPerson.GetName()
 		{
-			throw new NotImplementedException();
+			return employeeName;
 		}
 
 		void IPrintable.Print(IPrinter printer)
 		{
-			throw new NotImplementedException();
+			printer.PrintLine(employeePrint);
 		}
 	}
 }

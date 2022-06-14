@@ -12,6 +12,6 @@ namespace Exercice4
 		/// Obtains the customer ID
 		/// </summary>
 		/// <returns>a number only string containing the customer ID</returns>
-		string GetCID();
+		public string GetCID();
 	}
 }
