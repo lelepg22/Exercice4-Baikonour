@@ -8,9 +8,22 @@ namespace Exercice4
 {
 	public class Customer : ICustomer
 	{
+
+		string cid;
+		string name;
+
 		public Customer(string cid, string name)
 		{
-			throw new NotImplementedException();
+			if(cid.Length == 0 || !cid.All(x => Char.IsDigit(x)))
+            {
+				throw new BadIDException();
+            }
+			if(name.Length == 0)
+            {
+				throw new BadNameException();
+            }
+			this.cid = cid;
+			this.name = name;
 		}
 
 		int IComparable<ICustomer>.CompareTo(ICustomer other)
@@ -25,17 +38,17 @@ namespace Exercice4
 
 		string ICustomer.GetCID()
 		{
-			throw new NotImplementedException();
+			return cid;
 		}
 
 		string IPerson.GetName()
 		{
-			throw new NotImplementedException();
+			return name;
 		}
 
 		void IPrintable.Print(IPrinter printer)
 		{
-			throw new NotImplementedException();
+			printer.PrintLine("[" + cid + "] " + name);
 		}
 	}
 }

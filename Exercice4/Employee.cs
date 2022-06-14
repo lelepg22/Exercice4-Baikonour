@@ -6,36 +6,47 @@ using System.Threading.Tasks;
 
 namespace Exercice4
 {
-	public class Employee : IEmployee
-	{
-		public Employee(string eid, string name)
-		{
-			throw new NotImplementedException();
-		}
+    public class Employee : IEmployee
+    {
+        string eid;
+        string name;
 
-		int IComparable<IEmployee>.CompareTo(IEmployee other)
-		{
-			throw new NotImplementedException();
-		}
+        public Employee(string eid, string name)
+        {
+            if (eid.Length != 3 || !eid.All(x => Char.IsLetter(x))) {
+                throw new BadIDException();
+            }
+            if(name.Length == 0 )
+            {
+                throw new BadNameException();
+            }
+            this.eid = eid;
+            this.name = name;
+        }
 
-		bool IEquatable<IEmployee>.Equals(IEmployee other)
-		{
-			throw new NotImplementedException();
-		}
+        int IComparable<IEmployee>.CompareTo(IEmployee other)
+        {
+            throw new NotImplementedException();
+        }
 
-		string IEmployee.GetEID()
-		{
-			throw new NotImplementedException();
-		}
+        bool IEquatable<IEmployee>.Equals(IEmployee other)
+        {
+            throw new NotImplementedException();
+        }
 
-		string IPerson.GetName()
-		{
-			throw new NotImplementedException();
-		}
+        string IEmployee.GetEID()
+        {
+            return eid;
+        }
 
-		void IPrintable.Print(IPrinter printer)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        string IPerson.GetName()
+        {
+            return name;
+        }
+
+        void IPrintable.Print(IPrinter printer)
+        {
+            printer.PrintLine("[" + eid + "] " + name);
+        }
+    }
 }

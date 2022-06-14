@@ -18,9 +18,9 @@ namespace Exercice4
 			printer.PrintLine("Enter the customer name:");
 			string name = reader.GetLine();
 			printer.PrintLine("Enter the customer id:");
-			string eid = reader.GetLine();
-			Employee employee = new Employee(eid, name);
-			EmployeeRecordManager.AddEmployeeRecord(employee);
+			string cid = reader.GetLine();
+			Customer customer = new Customer(cid, name);
+			CustomerRecordManager.AddCustomerRecord(customer);
 		}
 
 		static void Main(string[] args)

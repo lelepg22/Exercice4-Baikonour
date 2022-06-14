@@ -15,6 +15,7 @@ namespace TestsExo4.Mocks
 		public MockLineReader(string[] lines)
 		{
 			if (lines.Length == 0) throw new ArgumentException("Expected at least a line");
+			this.lines = lines;
 		}
 
 		string ILineReader.GetLine()
