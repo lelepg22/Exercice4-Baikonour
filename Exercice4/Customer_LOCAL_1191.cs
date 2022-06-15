@@ -25,8 +25,6 @@ namespace Exercice4
 			
 			clientName = name;
 			clientPrint = "[" +clientId +"] " + clientName;
-
-
 		}
 
 		int IComparable<ICustomer>.CompareTo(ICustomer other)
@@ -40,8 +38,11 @@ namespace Exercice4
 		}
 
 		string ICustomer.GetCID()
-		{		
+		{
+			
 			return clientId;
+		
+			
 		}
 
 		string IPerson.GetName()

@@ -9,7 +9,8 @@ namespace Exercice4
 	public class EmployeeRecordManager
 	{
 		static public IEmployeeRecordAdder employeeRecordAdder = new EmployeeRecordAdder();
-		
+		static public Dictionary<string, IEmployee> dico = new Dictionary<string, IEmployee>();
+
 		static public void LoadRecords(string filename)
 		{
 			throw new NotImplementedException();
@@ -24,7 +25,7 @@ namespace Exercice4
 		}
 		static public void AddEmployeeRecord(IEmployee employee)
 		{
-			throw new NotImplementedException();
+			employeeRecordAdder.AddEmployeeRecord(employee, dico);
 		}
 	}
 }

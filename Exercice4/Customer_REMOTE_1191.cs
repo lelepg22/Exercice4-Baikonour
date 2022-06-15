@@ -8,25 +8,22 @@ namespace Exercice4
 {
 	public class Customer : ICustomer
 	{
-		public string clientId;
-		public string clientName;
-		public string clientPrint;
-		public int val;
+
+		string cid;
+		string name;
+
 		public Customer(string cid, string name)
 		{
-			if (cid.All(Char.IsDigit))
-			{
-				 clientId = cid; ;
-			}
-			if (!cid.All(Char.IsDigit))
-			{
+			if(cid.Length == 0 || !cid.All(x => Char.IsDigit(x)))
+            {
 				throw new BadIDException();
-			}
-			
-			clientName = name;
-			clientPrint = "[" +clientId +"] " + clientName;
-
-
+            }
+			if(name.Length == 0)
+            {
+				throw new BadNameException();
+            }
+			this.cid = cid;
+			this.name = name;
 		}
 
 		int IComparable<ICustomer>.CompareTo(ICustomer other)
@@ -40,18 +37,18 @@ namespace Exercice4
 		}
 
 		string ICustomer.GetCID()
-		{		
-			return clientId;
+		{
+			return cid;
 		}
 
 		string IPerson.GetName()
 		{
-			return clientName;
+			return name;
 		}
 
 		void IPrintable.Print(IPrinter printer)
 		{
-			printer.PrintLine(clientPrint);
+			printer.PrintLine("[" + cid + "] " + name);
 		}
 	}
 }

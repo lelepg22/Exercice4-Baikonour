@@ -23,7 +23,7 @@ namespace Exercice4
 		{
 			throw new NotImplementedException();
 		}
-		static void AddCustomerRecord(ICustomer customer)
+		static public void AddCustomerRecord(ICustomer customer)
 		{
 			customerRecordAdder.AddCustomerRecord(customer, customers);
 		}

@@ -27,17 +27,13 @@ namespace Exercice4
 			employeePrint = "[" + employeeId + "] " + employeeName;
 
 		}
+    
+        int IComparable<IEmployee>.CompareTo(IEmployee other)
+        {
+            throw new NotImplementedException();
+        }
 
-		int IComparable<IEmployee>.CompareTo(IEmployee other)
-		{
-			throw new NotImplementedException();
-		}
-
-		bool IEquatable<IEmployee>.Equals(IEmployee other)
-		{
-			throw new NotImplementedException();
-		}
-
+<
 		string IEmployee.GetEID()
 		{
 			return employeeId;
@@ -53,4 +49,8 @@ namespace Exercice4
 			printer.PrintLine(employeePrint);
 		}
 	}
+
+    
+    }
+
 }

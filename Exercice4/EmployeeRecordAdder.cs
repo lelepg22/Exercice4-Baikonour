@@ -10,9 +10,8 @@ namespace Exercice4
 	{
 		void IEmployeeRecordAdder.AddEmployeeRecord(IEmployee employee, IDictionary<string, IEmployee> dico)
 		{
-			string id = employee.GetEID();
-			string name = employee.GetName();
-			dico.Add("id", IEmployee);
+
+			dico.Add(employee.GetEID(), employee);
 
 		}
 	}

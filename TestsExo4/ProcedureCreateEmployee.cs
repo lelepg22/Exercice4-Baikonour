@@ -33,7 +33,7 @@ namespace TestsExo4
 		{
 			Mocks.MockLineReader reader = new Mocks.MockLineReader(new string[] { "Sylvain Bellamy", "12A4" });
 			Mocks.MockPrinter printer = new Mocks.MockPrinter();
-			Assert.ThrowsException<BadIDException>(() => Program.ProcedureCreateNewCustomer(reader, printer));
+			Assert.ThrowsException<BadIDException>(() => Program.ProcedureCreateNewEmployee(reader, printer));
 			Assert.AreEqual("Enter the employee name:", printer.lines[0]);
 			Assert.AreEqual("Enter the employee id:", printer.lines[1]);
 		}
